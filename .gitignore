@@ -25,3 +25,13 @@ dist-ssr
 
 .claude
 .env
+
+# 3D Model files (too large for deployment)
+*.glb
+*.gltf
+*.obj
+*.fbx
+public/models/*.glb
+public/models/*.gltf
+public/models/*.obj
+public/models/*.fbx
