@@ -112,6 +112,4 @@ WebGL 2.0 required.
 
 MIT
 
-## Credits
 
-Built with ❤️ using Claude Code
