@@ -1,0 +1,121 @@
+/* Animations */
+
+@keyframes scanline {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-4px); }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+@keyframes rotateIn {
+  from {
+    transform: rotate(-90deg);
+    opacity: 0;
+  }
+  to {
+    transform: rotate(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.5; }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+/* Apply animations */
+.header::before {
+  animation: scanline 3s linear infinite;
+}
+
+.logo-icon {
+  animation: float 3s ease-in-out infinite;
+}
+
+.panel {
+  animation: slideInLeft 0.4s ease-out backwards;
+}
+
+.panel:nth-child(1) { animation-delay: 0.1s; }
+.panel:nth-child(2) { animation-delay: 0.2s; }
+.panel:nth-child(3) { animation-delay: 0.3s; }
+
+.score-circle {
+  animation: rotateIn 0.8s ease-out backwards;
+  animation-delay: 0.5s;
+}
+
+.viewport-controls {
+  animation: slideInUp 0.5s ease-out backwards;
+  animation-delay: 0.3s;
+}
+
+.viewport-info {
+  animation: slideInDown 0.5s ease-out backwards;
+  animation-delay: 0.2s;
+}
+
+.viewport-placeholder-icon {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.light-indicator {
+  animation: blink 2s ease-in-out infinite;
+}
+
+.progress-fill::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent);
+  animation: shimmer 1.5s infinite;
+}
